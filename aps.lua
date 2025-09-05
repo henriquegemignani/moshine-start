@@ -30,10 +30,12 @@ end
 
 -- Easy to access coal for powering early game
 table.insert(data.raw["simple-entity"]["moshine-huge-volcanic-rock"].minable.results, {
-    type = "item", name = "coal", amount_min = 2, amount_max = 4
+    type = "item", name = "coal", amount_min = 6, amount_max = 10
 })
 
 -- Automated stone, for easy furnaces, military/production science, concrete without foundry
+-- Mines faster, to make early game less miserable.
+data.raw["resource"]["multi-ore"].minable.mining_time = 1
 table.insert(data.raw["resource"]["multi-ore"].minable.results, {
     type = "item",
     name = "stone",
@@ -79,7 +81,7 @@ data:extend { {
     prerequisites = { "space-science-pack" },
 } }
 utils.insert_recipe("steam-power", "moshine-start-steam-extractor", 3)
-utils.remove_recipes("steam-power", { "boiler" })
+utils.remove_recipes("steam-power", { "boiler", "offshore-pump" })
 utils.add_prerequisites("heating-tower", { "moshine-start-boiler" })
 
 -- Petroleum Synthesis replaces Oil Processing

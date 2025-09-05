@@ -170,6 +170,10 @@ local tech = {
         {
             type = "unlock-recipe",
             recipe = iron_recipe.name
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "offshore-pump"
         }
     },
     prerequisites = { "steam-power" },

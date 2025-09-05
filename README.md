@@ -57,6 +57,17 @@ Now you need to go to your repository settings > `Secrets and variables` > `Acti
 
 More details about a mods structure can be found in the [documentation](https://lua-api.factorio.com/latest/auxiliary/mod-structure.html).
 
+# Moshine Start
+
+Adds support for starting in [Moshine](https://mods.factorio.com/mod/Moshine), via [Any Planet Start](https://mods.factorio.com/mod/any-planet-start).
+
+## Changes
+
+- Mixed ore mines faster.
+- Mixed ore also includes stone. This allows automated production of Military Science, Production Science, both furnaces and concrete (without Foundry) .
+- A burner Steam Extractor is added for early game use of the Steam geysers.
+- A Steam Hammer building is added, for pressing Molten Iron into plates without a Foundry.
+
 # Credits
 
 Steam Extractor is the [BZ Natural Gas](https://mods.factorio.com/mod/bzgas)'s Gas Extractor.
