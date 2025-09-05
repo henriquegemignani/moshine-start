@@ -51,6 +51,9 @@ utils.set_trigger("steam-power", {
     entity = "moshine-huge-volcanic-rock"
 })
 
+require("prototypes.steam-hammer")
+utils.add_prerequisites("automation-science-pack", { "moshine-start-steam-hammer" })
+
 -- Boiler is not unlocked in Steam power
 data:extend { {
     type = "technology",

@@ -9,5 +9,3 @@ APS.add_planet {
     filename = "__moshine-start__/aps.lua",
     -- technology = "planet-discovery-moshine"
 }
-
--- TODO: steam hammer entity for molten iron processing
