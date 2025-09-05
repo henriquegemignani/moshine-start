@@ -142,6 +142,13 @@ utils.set_unit("advanced-oil-processing", {
     time = 30,
 })
 
+-- Fix dependencies of early moshine tech
+utils.set_prerequisites("moshine-tech-magnet", { "electromagnetic-plant" })
+utils.set_prerequisites("moshine-tech-silicon", { "moshine-start-petroleum-synthesis" })
+utils.set_prerequisites("moshine-tech-silicon-carbide", { "moshine-tech-silicon", "sulfur-processing" })
+utils.set_prerequisites("moshine-tech-glass", { "moshine-tech-silicon", "moshine-tech-supercomputer" })
+utils.add_recipes("moshine-tech-silicon-carbide", {"carbon"})
+
 --- Move unlocks from Planet discovery to appropriate places
 utils.remove_recipes("planet-discovery-moshine",
     { "moshine-start-steam-extractor", "petroleum-from-sand-sulfur-steam-carbon", "concrete-from-molten-iron-and-sand" })
