@@ -23,5 +23,15 @@
     "Lua.diagnostics.disable": [
         "lowercase-global"
     ],
-    "Lua.runtime.version": "Lua 5.2"
+    "Lua.runtime.version": "Lua 5.2",
+    "factorio.versions": [
+        {
+            "name": "fac",
+            "factorioPath": "f:\\Factorio_2.0.20\\bin\\x64\\factorio.exe"
+        }
+    ],
+    "Lua.workspace.userThirdParty": [
+        "c:\\Users\\henri\\AppData\\Roaming\\Code\\User\\workspaceStorage\\71be9058ea12e1ee21663971af6b242a\\justarandomgeek.factoriomod-debug\\sumneko-3rd"
+    ],
+    "Lua.workspace.checkThirdParty": "ApplyInMemory"
 }
