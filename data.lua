@@ -10,6 +10,4 @@ APS.add_planet {
     -- technology = "planet-discovery-moshine"
 }
 
--- TODO: "gas tower" entity for steam extraction
 -- TODO: steam hammer entity for molten iron processing
--- TODO: neodymium electric pole

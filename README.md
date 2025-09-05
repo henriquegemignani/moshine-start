@@ -60,3 +60,5 @@ More details about a mods structure can be found in the [documentation](https://
 # Credits
 
 Steam Extractor is the [BZ Natural Gas](https://mods.factorio.com/mod/bzgas)'s Gas Extractor.
+
+Boiler technology icon is from [KS Power](https://mods.factorio.com/mod/KS_Power).
