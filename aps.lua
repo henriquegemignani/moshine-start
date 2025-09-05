@@ -14,4 +14,7 @@ table.insert(data.raw["resource"]["multi-ore"].minable.results, {
 })
 -- A way to make concrete without the foundry too -> solved by having stone
 
+-- Make electric poles buildable without wood
+data.raw["recipe"]["small-electric-pole"].ingredients[1].name = "iron-plate"
+
 -- TODO: Adjust simple and regular coal liquefaction to be unlocked via research 
