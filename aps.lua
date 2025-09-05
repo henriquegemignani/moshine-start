@@ -142,6 +142,40 @@ utils.set_unit("advanced-oil-processing", {
     time = 30,
 })
 
+-- Iron ore for concrete
+data:extend { {
+    type = "recipe",
+    name = "moshine-start-molten-iron-cooling",
+    category = "chemistry-or-cryogenics",
+    subgroup = "fluid-recipes",
+    enabled = false,
+    auto_recycle = false,
+    allow_productivity = false,
+    always_show_products = true,
+    show_amount_in_title = false,
+    allow_decomposition = false,
+    allow_quality = false,
+    icons = {
+        {
+            icon = data.raw["item"]["iron-ore"].icon,
+        },
+        {
+            icon = "__space-age__/graphics/icons/casting-iron.png",
+            scale = 0.32,
+            shift = { 10, -10 },
+        },
+    },
+    ingredients = {
+        { type = "fluid", name = "water", amount = 100 },
+        { type = "fluid", name = "molten-iron", amount = 250 },
+    },
+    energy_required = 1,
+    results = {
+        { type = "item", name = "iron-ore", amount = 1 }
+    },
+}  --[[@as data.RecipePrototype]]}
+utils.add_recipes("concrete", {"moshine-start-molten-iron-cooling"})
+
 -- Fix dependencies of early moshine tech
 utils.set_prerequisites("moshine-tech-magnet", { "electromagnetic-plant" })
 utils.set_prerequisites("moshine-tech-silicon", { "moshine-start-petroleum-synthesis" })
