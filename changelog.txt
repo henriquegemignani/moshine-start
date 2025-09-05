@@ -1,0 +1,11 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 2025-09-05
+  Features:
+    - Add proper place to the early moshine tech
+    - Add source of iron ore
+    - Add Steam Hammer
+    - Bare minimum support implemented
+    - Replace oil processing in the tech tree
+  Balancing:
+    - Improving early burner phase
