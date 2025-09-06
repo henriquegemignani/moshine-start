@@ -28,6 +28,15 @@ local function move_recipes_to(old, new, recipes)
     utils.add_recipes(new, recipes)
 end
 
+local function table_find(t, pred)
+    for _, v in pairs(t) do
+        if pred(v) then
+            return v
+        end
+    end
+    return nil
+end
+
 -- Easy to access coal for powering early game
 table.insert(data.raw["simple-entity"]["moshine-huge-volcanic-rock"].minable.results, {
     type = "item", name = "coal", amount_min = 6, amount_max = 10
@@ -42,7 +51,10 @@ table.insert(data.raw["resource"]["multi-ore"].minable.results, {
     amount = 1,
     probability = 5 / 100,
 })
--- A way to make concrete without the foundry too -> solved by having stone
+table_find(
+    data.raw["resource"]["multi-ore"].minable.results,
+    function(result) return result.name == "copper-ore" end
+).probability = 10/100
 
 -- Make electric poles buildable without wood
 data.raw["recipe"]["small-electric-pole"].ingredients[1].name = "iron-plate"
