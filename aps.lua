@@ -175,11 +175,12 @@ data:extend { {
     },
 }  --[[@as data.RecipePrototype]]}
 utils.add_recipes("concrete", {"moshine-start-molten-iron-cooling"})
+utils.add_prerequisites("concrete", {"moshine-start-petroleum-synthesis"})
 
 -- Fix dependencies of early moshine tech
 utils.set_prerequisites("moshine-tech-magnet", { "electromagnetic-plant" })
 utils.set_prerequisites("moshine-tech-silicon", { "moshine-start-petroleum-synthesis" })
-utils.set_prerequisites("moshine-tech-silicon-carbide", { "moshine-tech-silicon", "sulfur-processing" })
+utils.set_prerequisites("moshine-tech-silicon-carbide", { "moshine-tech-silicon", "sulfur-processing", "space-science-pack" })
 utils.set_prerequisites("moshine-tech-glass", { "moshine-tech-silicon", "moshine-tech-supercomputer" })
 utils.add_recipes("moshine-tech-silicon-carbide", {"carbon"})
 
