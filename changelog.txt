@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.2
+Date: 2025-09-06
+  Balancing:
+    - Increase copper ore chance to 10%, from 8%.
+    - Increase Steam Hammer crafting speed by 50%, as it's 50% bigger than a furnace.
+  Bugfixes:
+    - Add practical tech prerequisites to Concrete, Silicon carbide
+    - Molten iron cooling requiring 10x as much Molten Iron as intended
+    - Remove starting wood
+---------------------------------------------------------------------------------------------------
 Version: 1.0.1
 Date: 2025-09-05
   Bugfixes:
