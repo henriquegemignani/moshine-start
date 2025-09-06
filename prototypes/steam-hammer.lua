@@ -135,7 +135,7 @@ local entity = {
         },
     },
     crafting_categories = { "moshine-start-steam-hammer" },
-    crafting_speed = 1,
+    crafting_speed = 1.5,
     ingredient_count = 1,
 
     -- open_sound = sounds.machine_open,
