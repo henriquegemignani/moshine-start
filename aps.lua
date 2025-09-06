@@ -167,7 +167,7 @@ data:extend { {
     },
     ingredients = {
         { type = "fluid", name = "water", amount = 100 },
-        { type = "fluid", name = "molten-iron", amount = 250 },
+        { type = "fluid", name = "molten-iron", amount = 25 },
     },
     energy_required = 1,
     results = {
