@@ -211,9 +211,39 @@ data:extend { {
 }  --[[@as data.RecipePrototype]]}
 utils.add_recipes("concrete", {"moshine-start-molten-iron-cooling"})
 
+-- Using silicon for more copper cables
+data:extend { {
+    type = "recipe",
+    name = "moshine-start-silicone-cable",
+    category = "electronics",
+    enabled = false,
+    auto_recycle = false,
+    allow_decomposition = false,
+    icons = {
+        {
+            icon = data.raw["item"]["copper-cable"].icon,
+        },
+        {
+            icon = "__Moshine__/graphics/icons/silicon.png",
+            scale = 0.32,
+            shift = { 10, -10 },
+        },
+    },
+    ingredients = {
+        { type = "item", name = "copper-plate", amount = 2 },
+        { type = "item", name = "silicon", amount = 2 },
+        { type = "item", name = "coal", amount = 1 },
+    },
+    energy_required = 1,
+    results = {
+        { type = "item", name = "copper-cable", amount = 8 }
+    },
+}  --[[@as data.RecipePrototype]]}
+utils.add_recipes("moshine-tech-silicon", {"moshine-start-silicone-cable"})
+
 -- Fix dependencies of early moshine tech
 utils.set_prerequisites("moshine-tech-magnet", { "electromagnetic-plant" })
-utils.set_prerequisites("moshine-tech-silicon", { "moshine-start-petroleum-synthesis" })
+utils.set_prerequisites("moshine-tech-silicon", { "chemical-science-pack" })
 utils.set_prerequisites("moshine-tech-silicon-carbide", { "moshine-tech-silicon", "sulfur-processing", "space-science-pack" })
 utils.set_prerequisites("moshine-tech-glass", { "moshine-tech-silicon", "moshine-tech-supercomputer" })
 utils.add_recipes("moshine-tech-silicon-carbide", {"carbon"})
@@ -225,4 +255,3 @@ utils.add_recipes("foundry", { "concrete-from-molten-iron-and-sand" })
 
 
 -- TODO: safe asteroids in orbit
--- TODO: add silicone cable recipe (silicon + copper plate + carbon/coal -> 4 cable)
