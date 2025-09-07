@@ -253,5 +253,5 @@ utils.remove_recipes("planet-discovery-moshine",
     { "moshine-start-steam-extractor", "petroleum-from-sand-sulfur-steam-carbon", "concrete-from-molten-iron-and-sand" })
 utils.add_recipes("foundry", { "concrete-from-molten-iron-and-sand" })
 
-
--- TODO: safe asteroids in orbit
+-- safe asteroids in orbit only
+require("safe-asteroids")
