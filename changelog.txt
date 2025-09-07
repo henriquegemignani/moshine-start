@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 2025-09-07
+  Features:
+    - Add Silicone coated copper cables.
+  Bugfixes:
+    - Add dedicated technology for Steam Condensation
+---------------------------------------------------------------------------------------------------
 Version: 1.0.2
 Date: 2025-09-06
   Balancing:
