@@ -96,6 +96,31 @@ utils.insert_recipe("steam-power", "moshine-start-steam-extractor", 3)
 utils.remove_recipes("steam-power", { "boiler", "offshore-pump" })
 utils.add_prerequisites("heating-tower", { "moshine-start-boiler" })
 
+-- Dedicated tech for Steam Condensation
+data:extend { {
+    type = "technology",
+    name = "moshine-start-steam-condensation",
+    icon = "__moshine-start__/graphics/icons/steam-condensation-technology.png",
+    icon_size = 256,
+    effects = {
+        {type = "unlock-recipe", recipe = "steam-condensation"},
+        {type = "unlock-recipe", recipe = "chemical-plant"},
+    },
+    unit = {
+        count = 50,
+        ingredients = {
+            { "automation-science-pack", 1 },
+            { "logistic-science-pack",   1 },
+        },
+        time = 15,
+    },
+    prerequisites = { "logistic-science-pack" },
+} }
+utils.add_prerequisites("concrete", {"moshine-start-steam-condensation"})
+utils.add_prerequisites("sulfur-processing", {"moshine-start-steam-condensation"})
+utils.set_prerequisites("explosives", {"moshine-start-steam-condensation"})
+utils.remove_recipes("calcite-processing", { "steam-condensation" })
+
 -- Petroleum Synthesis replaces Oil Processing
 data:extend { {
     type = "technology",
@@ -133,12 +158,10 @@ utils.set_unit("coal-liquefaction", {
     time = 30,
 })
 
---
 utils.insert_recipe("coal-liquefaction", "simple-coal-liquefaction", 1)
-utils.add_recipes("coal-liquefaction", { "steam-condensation" })
 move_recipes_to("advanced-oil-processing", "coal-liquefaction",
     { "heavy-oil-cracking", "light-oil-cracking", "solid-fuel-from-heavy-oil", "solid-fuel-from-light-oil" })
-utils.remove_recipes("calcite-processing", { "simple-coal-liquefaction", "steam-condensation" })
+utils.remove_recipes("calcite-processing", { "simple-coal-liquefaction" })
 
 -- Move oil processing to Nauvis
 utils.set_prerequisites("oil-processing", { "planet-discovery-nauvis" })
@@ -187,7 +210,6 @@ data:extend { {
     },
 }  --[[@as data.RecipePrototype]]}
 utils.add_recipes("concrete", {"moshine-start-molten-iron-cooling"})
-utils.add_prerequisites("concrete", {"moshine-start-petroleum-synthesis"})
 
 -- Fix dependencies of early moshine tech
 utils.set_prerequisites("moshine-tech-magnet", { "electromagnetic-plant" })
@@ -200,3 +222,7 @@ utils.add_recipes("moshine-tech-silicon-carbide", {"carbon"})
 utils.remove_recipes("planet-discovery-moshine",
     { "moshine-start-steam-extractor", "petroleum-from-sand-sulfur-steam-carbon", "concrete-from-molten-iron-and-sand" })
 utils.add_recipes("foundry", { "concrete-from-molten-iron-and-sand" })
+
+
+-- TODO: safe asteroids in orbit
+-- TODO: add silicone cable recipe (silicon + copper plate + carbon/coal -> 4 cable)
