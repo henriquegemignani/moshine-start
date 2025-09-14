@@ -219,6 +219,7 @@ data:extend { {
     enabled = false,
     auto_recycle = false,
     allow_decomposition = false,
+    allow_as_intermediate = false,
     icons = {
         {
             icon = data.raw["item"]["copper-cable"].icon,
