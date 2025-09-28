@@ -122,29 +122,18 @@ utils.set_prerequisites("explosives", {"moshine-start-steam-condensation"})
 utils.remove_recipes("calcite-processing", { "steam-condensation" })
 
 -- Petroleum Synthesis replaces Oil Processing
-data:extend { {
-    type = "technology",
-    name = "moshine-start-petroleum-synthesis",
-    icon = "__Moshine-assets__/graphics/icons/petroleum-from-sand-sulfur-steam-carbon.png",
-    effects = {
-        {
-            type = "unlock-recipe",
-            recipe = "petroleum-from-sand-sulfur-steam-carbon"
-        },
-    },
-    unit = {
-        count = 150,
-        ingredients = {
-            { "automation-science-pack", 1 },
-            { "logistic-science-pack",   1 },
-        },
-        time = 30,
-    },
-} }
-move_recipes_to("oil-processing", "moshine-start-petroleum-synthesis",
+move_recipes_to("oil-processing", "moshine-petroleum-from-sand-sulfur-steam-carbon",
     { "oil-refinery", "chemical-plant", "solid-fuel-from-petroleum-gas" })
-replace_technology_in_tree("oil-processing", "moshine-start-petroleum-synthesis")
-utils.set_prerequisites("moshine-start-petroleum-synthesis", { "fluid-handling" })
+replace_technology_in_tree("oil-processing", "moshine-petroleum-from-sand-sulfur-steam-carbon")
+utils.set_unit("moshine-petroleum-from-sand-sulfur-steam-carbon", {
+    count = 150,
+    ingredients = {
+        { "automation-science-pack", 1 },
+        { "logistic-science-pack",   1 },
+    },
+    time = 30,
+})
+utils.set_prerequisites("moshine-petroleum-from-sand-sulfur-steam-carbon", { "fluid-handling" })
 
 -- Coal Liquefaction replaces Advanced oil processing
 replace_technology_in_tree("advanced-oil-processing", "coal-liquefaction")
@@ -247,12 +236,11 @@ utils.set_prerequisites("moshine-tech-magnet", { "electromagnetic-plant" })
 utils.set_prerequisites("moshine-tech-silicon", { "chemical-science-pack" })
 utils.set_prerequisites("moshine-tech-silicon-carbide", { "moshine-tech-silicon", "sulfur-processing", "space-science-pack" })
 utils.set_prerequisites("moshine-tech-glass", { "moshine-tech-silicon", "moshine-tech-supercomputer" })
+utils.set_prerequisites("moshine-concrete-from-molten-iron-and-sand", { "foundry" })
 utils.add_recipes("moshine-tech-silicon-carbide", {"carbon"})
 
 --- Move unlocks from Planet discovery to appropriate places
-utils.remove_recipes("planet-discovery-moshine",
-    { "moshine-start-steam-extractor", "petroleum-from-sand-sulfur-steam-carbon", "concrete-from-molten-iron-and-sand" })
-utils.add_recipes("foundry", { "concrete-from-molten-iron-and-sand" })
+utils.remove_recipes("planet-discovery-moshine", { "moshine-start-steam-extractor" })
 
 -- safe asteroids in orbit only
 require("safe-asteroids")
