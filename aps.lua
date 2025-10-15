@@ -235,7 +235,7 @@ utils.add_recipes("moshine-tech-silicon", {"moshine-start-silicone-cable"})
 utils.set_prerequisites("moshine-tech-magnet", { "electromagnetic-plant" })
 utils.set_prerequisites("moshine-tech-silicon", { "chemical-science-pack" })
 utils.set_prerequisites("moshine-tech-silicon-carbide", { "moshine-tech-silicon", "sulfur-processing", "space-science-pack" })
-utils.set_prerequisites("moshine-tech-glass", { "moshine-tech-silicon", "moshine-tech-supercomputer" })
+utils.set_prerequisites("moshine-tech-glass", { "moshine-tech-silicon", "moshine-tech-neural_computer" })
 utils.set_prerequisites("moshine-concrete-from-molten-iron-and-sand", { "foundry" })
 utils.add_recipes("moshine-tech-silicon-carbide", {"carbon"})
 
