@@ -49,12 +49,12 @@ table.insert(data.raw["resource"]["multi-ore"].minable.results, {
     type = "item",
     name = "stone",
     amount = 1,
-    probability = 5 / 100,
+    independent_probability = 5 / 100,
 })
 table_find(
     data.raw["resource"]["multi-ore"].minable.results,
     function(result) return result.name == "copper-ore" end
-).probability = 10/100
+).independent_probability = 10/100
 
 -- Make electric poles buildable without wood
 data.raw["recipe"]["small-electric-pole"].ingredients[1].name = "iron-plate"
@@ -62,7 +62,7 @@ data.raw["recipe"]["small-electric-pole"].ingredients[1].name = "iron-plate"
 -- Mine big rock, get steam power
 utils.set_trigger("steam-power", {
     type = "mine-entity",
-    entity = "moshine-huge-volcanic-rock"
+    entities = {"moshine-huge-volcanic-rock"}
 })
 
 require("prototypes.steam-hammer")
@@ -170,7 +170,7 @@ utils.set_unit("advanced-oil-processing", {
 data:extend { {
     type = "recipe",
     name = "moshine-start-molten-iron-cooling",
-    category = "chemistry-or-cryogenics",
+    categories = {"chemistry", "cryogenics"},
     subgroup = "fluid-recipes",
     enabled = false,
     auto_recycle = false,
@@ -204,7 +204,7 @@ utils.add_recipes("concrete", {"moshine-start-molten-iron-cooling"})
 data:extend { {
     type = "recipe",
     name = "moshine-start-silicone-cable",
-    category = "electronics",
+    categories = {"crafting", "electromagnetics"},
     enabled = false,
     auto_recycle = false,
     allow_decomposition = false,

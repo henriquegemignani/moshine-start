@@ -5,10 +5,11 @@
   "author": "darkszero",
   "homepage": "https://github.com/henriquegemignani/moshine-start",
   "description": "Adds Moshine support to Any Planet Start",
-  "factorio_version": "2.0",
+  "factorio_version": "2.1",
   "dependencies": [
+    "base",
     "any-planet-start",
-    "Moshine >= 1.1.0"
+    "Moshine >= 1.1.6"
   ],
   "quality_required": false,
   "rail_bridges_required": false,

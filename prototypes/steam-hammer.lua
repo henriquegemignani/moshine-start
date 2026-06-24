@@ -1,3 +1,5 @@
+local assembler2pipepictures = require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures
+
 ---@type data.RecipeCategory
 local recipe_category = {
     type = "recipe-category",
@@ -10,7 +12,7 @@ local iron_recipe = {
     name = "moshine-start-press-molten-iron",
     energy_required = 3.2,
     enabled = false,
-    category = "moshine-start-steam-hammer",
+    categories = { "moshine-start-steam-hammer" },
     icons = {
         {
             icon = "__space-age__/graphics/icons/casting-iron.png",
@@ -89,7 +91,7 @@ local entity = {
                 { flow_direction = "input-output", direction = defines.direction.east, position = { 1, 0 } },
                 { flow_direction = "input-output", direction = defines.direction.west, position = { -1, 0 } }
             },
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = assembler2pipepictures,
             pipe_covers = pipecoverspictures(),
         }
     },
@@ -97,7 +99,7 @@ local entity = {
     fluid_boxes = {
         {
             production_type = "input",
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = assembler2pipepictures,
             pipe_covers = pipecoverspictures(),
             volume = 1000,
             pipe_connections = {
