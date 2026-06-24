@@ -85,7 +85,8 @@ local entity = {
         effectivity = 0.35,
         fluid_box = {
             production_type = "input",
-            filter = "steam",
+            -- FIXME: 2.1.7 is causing bogus fluid mixing errors when this is set
+            -- filter = "steam",
             volume = 50,
             pipe_connections = {
                 { flow_direction = "input-output", direction = defines.direction.east, position = { 1, 0 } },
@@ -103,7 +104,7 @@ local entity = {
             pipe_covers = pipecoverspictures(),
             volume = 1000,
             pipe_connections = {
-                { flow_direction = "input-output", direction = defines.direction.north, position = { 0, -1 } },
+                { flow_direction = "input", direction = defines.direction.north, position = { 0, -1 } },
                 { flow_direction = "input-output", direction = defines.direction.south, position = { 0, 1 } },
             },
         },
