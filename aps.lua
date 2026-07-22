@@ -69,32 +69,37 @@ require("prototypes.steam-hammer")
 utils.add_prerequisites("automation-science-pack", { "moshine-start-steam-hammer" })
 
 -- Boiler is not unlocked in Steam power
-data:extend { {
-    type = "technology",
-    name = "moshine-start-boiler",
-    icon = "__moshine-start__/graphics/icons/oil-boiler-technology.png",
-    icon_size = 1024,
-    effects = {
-        {
-            type = "unlock-recipe",
-            recipe = "boiler"
+if mods["planet-muluna"] then
+    utils.insert_recipe("muluna-advanced-boiler", "boiler", 1)
+else
+    data:extend { {
+        type = "technology",
+        name = "moshine-start-boiler",
+        icon = "__moshine-start__/graphics/icons/oil-boiler-technology.png",
+        icon_size = 1024,
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "boiler"
+            },
         },
-    },
-    unit = {
-        count = 150,
-        ingredients = {
-            { "automation-science-pack", 1 },
-            { "logistic-science-pack",   1 },
-            { "chemical-science-pack",   1 },
-            { "space-science-pack",      1 },
+        unit = {
+            count = 150,
+            ingredients = {
+                { "automation-science-pack", 1 },
+                { "logistic-science-pack",   1 },
+                { "chemical-science-pack",   1 },
+                { "space-science-pack",      1 },
+            },
+            time = 30,
         },
-        time = 30,
-    },
-    prerequisites = { "space-science-pack" },
-} }
+        prerequisites = { "space-science-pack" },
+    } }
+    utils.add_prerequisites("heating-tower", { "moshine-start-boiler" })
+end
+
 utils.insert_recipe("steam-power", "moshine-start-steam-extractor", 3)
 utils.remove_recipes("steam-power", { "boiler", "offshore-pump" })
-utils.add_prerequisites("heating-tower", { "moshine-start-boiler" })
 
 -- Dedicated tech for Steam Condensation
 data:extend { {
